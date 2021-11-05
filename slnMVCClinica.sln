@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCClinica", "MVCClinica\MVCClinica.csproj", "{FD6C1EBD-8C70-4300-AE13-514F5D027F2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{C215522A-A895-44DF-92F8-C55DE8B720A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD6C1EBD-8C70-4300-AE13-514F5D027F2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD6C1EBD-8C70-4300-AE13-514F5D027F2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD6C1EBD-8C70-4300-AE13-514F5D027F2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD6C1EBD-8C70-4300-AE13-514F5D027F2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C215522A-A895-44DF-92F8-C55DE8B720A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C215522A-A895-44DF-92F8-C55DE8B720A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C215522A-A895-44DF-92F8-C55DE8B720A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C215522A-A895-44DF-92F8-C55DE8B720A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C75CA35-D924-4AC0-97B1-2EA5C3AB0C3A}
+	EndGlobalSection
+EndGlobal
