@@ -1,5 +1,7 @@
+using MVCClinica.Data;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,6 +13,8 @@ namespace MVCClinica
     {
         protected void Application_Start()
         {
+            Database.SetInitializer<MedicoDbContext>(new MedicoInitializer());
+
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
