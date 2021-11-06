@@ -9,7 +9,15 @@
 </head>
 <body>
     <p>@Html.ActionLink("Create New", "Create", "Medicos")</p>
+
+    @using (Html.BeginForm("Filter", "Medicos", FormMethod.Get))
+    {
+
+        @Html.DropDownList("Especialidades")
+        <input type="submit" value="Get" />
+    }
     <table>
+
         <tr>
             <th>@Html.DisplayNameFor(model => model.Nombre)</th>
             <th>@Html.DisplayNameFor(model => model.Apellido)</th>
@@ -21,19 +29,19 @@
         </tr>
         @foreach (var item in Model)
         {
-    <tr>
-        <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
-        <td>@Html.DisplayFor(modelItem => item.Apellido)</td>
-        <td>@Html.DisplayFor(modelItem => item.NroMatricula)</td>
-        <td>@Html.DisplayFor(modelItem => item.Especialidad)</td>
-        <td>@Html.DisplayFor(modelItem => item.FechaNacimiento)</td>
-        <td>@Html.DisplayFor(modelItem => item.Ciudad)</td>
-        <td>
-            @Html.ActionLink("Detail", "Detail", new { id = item.Id })
-        </td>
-        <td>@Html.ActionLink("Edit", "Edit", new { id = item.Id }) </td>
-        <td>@Html.ActionLink("Delete", "Delete", new { id = item.Id }) </td>
-    </tr>
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.Apellido)</td>
+                <td>@Html.DisplayFor(modelItem => item.NroMatricula)</td>
+                <td>@Html.DisplayFor(modelItem => item.Especialidad)</td>
+                <td>@Html.DisplayFor(modelItem => item.FechaNacimiento)</td>
+                <td>@Html.DisplayFor(modelItem => item.Ciudad)</td>
+                <td>
+                    @Html.ActionLink("Detail", "Detail", new { id = item.Id })
+                </td>
+                <td>@Html.ActionLink("Edit", "Edit", new { id = item.Id }) </td>
+                <td>@Html.ActionLink("Delete", "Delete", new { id = item.Id }) </td>
+            </tr>
         }
     </table>
 </body>

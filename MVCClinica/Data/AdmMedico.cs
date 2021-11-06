@@ -16,6 +16,18 @@ namespace MVCClinica.Data
             return context.Medicos.ToList();           
         }
 
+        public static List<string> ListarSoloEspecialidades()
+        {
+            var esps = context.Medicos.Select(m => m.Especialidad).Distinct();
+            return esps.ToList();
+        }
+
+        public static List<Medico> ListarPorEspecialidad(string especialidad)
+        {
+            var medicos= context.Medicos.Select(m => m.Especialidad == especialidad);
+            return (List<Medico>)medicos;
+        }
+
         internal static void Insertar(Medico medico)
         {
             context.Medicos.Add(medico);

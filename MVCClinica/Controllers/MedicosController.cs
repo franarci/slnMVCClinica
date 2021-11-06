@@ -16,6 +16,20 @@ namespace MVCClinica.Controllers
             var medicos = AdmMedico.Listar();
 
 
+            ViewBag.Especialidades = new SelectList(AdmMedico.ListarSoloEspecialidades());
+
+
+            return View("Index", medicos);
+        }
+
+        [ActionName("Filter")]
+        public ActionResult SearchBySpecialty(string especialidad)
+        {
+            if (especialidad == null)
+            {
+                return View("Index");
+            }
+            List<Medico> medicos = AdmMedico.ListarPorEspecialidad(especialidad);
             return View("Index", medicos);
         }
 
