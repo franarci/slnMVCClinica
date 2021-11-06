@@ -1,6 +1,7 @@
 ﻿using MVCClinica.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -23,7 +24,22 @@ namespace MVCClinica.Data
 
         internal static Medico GetPorId(int id)
         {
-            return context.Medicos.Find(id);
+            Medico medico= context.Medicos.Find(id);
+            context.Entry(medico).State = EntityState.Detached;
+            return medico;
+        }
+
+        internal static void Modificar(Medico medico)
+        {
+            context.Medicos.Attach(medico);
+            context.SaveChanges();
+        }
+
+        internal static void Eliminar(int id)
+        {
+            Medico medico = context.Medicos.Find(id);
+            context.Medicos.Remove(medico);
+            context.SaveChanges();
         }
     }
 }

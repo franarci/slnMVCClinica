@@ -123,6 +123,9 @@
     </None>
     <Content Include="Views\Medicos\Index.cshtml" />
     <Content Include="Views\Medicos\Create.cshtml" />
+    <Content Include="Views\Medicos\Detail.cshtml" />
+    <Content Include="Views\Medicos\Edit.cshtml" />
+    <Content Include="Views\Medicos\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
