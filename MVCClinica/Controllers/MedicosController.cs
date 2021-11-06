@@ -48,5 +48,57 @@ namespace MVCClinica.Controllers
             }
             return HttpNotFound();
         }
+
+        //Medicos/Edit --> Get
+        public ActionResult Edit(int id)
+        {
+            Medico medico= AdmMedico.GetPorId(id);
+            if (medico != null)
+            {
+                return View("Edit", medico);
+            }
+            return HttpNotFound();
+        }
+
+        //Medicos/Edit --> POST
+        [HttpPost]
+        [ActionName("Edit")]
+        public ActionResult Edit(Medico medico)
+        {
+            if (ModelState.IsValid)
+            {
+                AdmMedico.Modificar(medico);
+                return RedirectToAction("Index");
+            }
+            return View("Edit", medico);
+        }
+
+        //Opera/Delete/id --> GET
+        //[HttpGet]
+        public ActionResult Delete(int id)
+        {
+            Medico medico = AdmMedico.GetPorId(id);
+
+            if (medico != null)
+            {
+                return View("Delete", medico);
+            }
+            else
+            {
+                return HttpNotFound();
+            }
+        }
+
+        //Medicos/Delete  --> POST
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+         
+
+            AdmMedico.Eliminar(id);
+
+            return RedirectToAction("Index");
+        }
     }
 }

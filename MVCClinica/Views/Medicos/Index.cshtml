@@ -29,8 +29,10 @@
         <td>@Html.DisplayFor(modelItem => item.FechaNacimiento)</td>
         <td>@Html.DisplayFor(modelItem => item.Ciudad)</td>
         <td>
+            @Html.ActionLink("Detail", "Detail", new { id = item.Id })
         </td>
-
+        <td>@Html.ActionLink("Edit", "Edit", new { id = item.Id }) </td>
+        <td>@Html.ActionLink("Delete", "Delete", new { id = item.Id }) </td>
     </tr>
         }
     </table>
