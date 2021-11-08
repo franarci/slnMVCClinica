@@ -13,7 +13,7 @@ namespace MVCClinica
     {
         protected void Application_Start()
         {
-            Database.SetInitializer<MedicoDbContext>(new MedicoInitializer());
+            //Database.SetInitializer<MedicoDbContext>(new MedicoInitializer());
 
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);

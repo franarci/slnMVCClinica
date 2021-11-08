@@ -103,6 +103,7 @@
     <Compile Include="Data\AdmMedico.cs" />
     <Compile Include="Data\MedicoDbContext.cs" />
     <Compile Include="Data\MedicoInitializer.cs" />
+    <Compile Include="Filter\MyFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -121,11 +122,13 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="Views\Medicos\Index.cshtml" />
     <Content Include="Views\Medicos\Create.cshtml" />
     <Content Include="Views\Medicos\Detail.cshtml" />
     <Content Include="Views\Medicos\Edit.cshtml" />
     <Content Include="Views\Medicos\Delete.cshtml" />
+    <Content Include="Views\Medicos\GetByFullName.cshtml" />
+    <Content Include="Views\Medicos\Index.cshtml" />
+    <Content Include="Views\Medicos\SearchBySpecialty.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

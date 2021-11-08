@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MVCClinica.Data;
+using MVCClinica.Filter.OperaWebSite.Filter;
 using MVCClinica.Models;
 
 namespace MVCClinica.Controllers
@@ -15,14 +16,19 @@ namespace MVCClinica.Controllers
         {
             var medicos = AdmMedico.Listar();
 
-
-            ViewBag.Especialidades = new SelectList(AdmMedico.ListarSoloEspecialidades());
-
-
             return View("Index", medicos);
         }
 
-        [ActionName("Filter")]
+        public ActionResult GetByFullName(string nombre, string apellido)
+        {
+            Medico medico = AdmMedico.TraerPorNombreCompleto(nombre,apellido);
+            if (medico != null)
+            {
+                return View("Detail", medico);
+            }
+            return HttpNotFound();
+        }
+
         public ActionResult SearchBySpecialty(string especialidad)
         {
             if (especialidad == null)
@@ -32,7 +38,7 @@ namespace MVCClinica.Controllers
             List<Medico> medicos = AdmMedico.ListarPorEspecialidad(especialidad);
             return View("Index", medicos);
         }
-
+        [MyFilter]
         public ActionResult Create()
         {
             Medico medico = new Medico();

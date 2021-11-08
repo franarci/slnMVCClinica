@@ -10,10 +10,11 @@
 <body>
     <p>@Html.ActionLink("Create New", "Create", "Medicos")</p>
 
-    @using (Html.BeginForm("Filter", "Medicos", FormMethod.Get))
+    @using (Html.BeginForm("SearchBySpecialty", "Medicos", FormMethod.Get))
     {
 
-        @Html.DropDownList("Especialidades")
+        @Html.TextBox("especialidad", null)
+
         <input type="submit" value="Get" />
     }
     <table>

@@ -1,0 +1,20 @@
+﻿@model IEnumerable<MVCClinica.Models.Medico>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SearchBySpecialty</title>
+</head>
+<body>
+    <div>
+        <h1>Buscar por Nombre Completo</h1>
+        @using (Html.BeginForm("SearchBySpecialty", "Medico", FormMethod.Get))
+        {
+            @Html.TextBox("especialidad");
+            <input type="submit" value="Get" />
+        }
+    </div>
+</body>
+</html>

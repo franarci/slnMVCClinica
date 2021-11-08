@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace MVCClinica.Data
 {
@@ -24,8 +25,16 @@ namespace MVCClinica.Data
 
         public static List<Medico> ListarPorEspecialidad(string especialidad)
         {
-            var medicos= context.Medicos.Select(m => m.Especialidad == especialidad);
-            return (List<Medico>)medicos;
+            List<Medico> medicos = (from o in context.Medicos
+                                                where o.Especialidad == especialidad
+                                                select o).ToList();
+            return medicos;
+        }
+
+        internal static Medico TraerPorNombreCompleto(string nombre, string apellido)
+        {
+            var medico = context.Medicos.FirstOrDefault(m => m.Nombre == nombre && m.Apellido == apellido);
+            return (Medico)medico;
         }
 
         internal static void Insertar(Medico medico)
